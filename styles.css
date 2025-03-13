@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.size-div {
+    margin: 15px 0px;
+    width: 400px;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: teal;
+    border-color: black;
+    /* flex: 1; */
+}
+
+.change-color {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin: 20px 0;
+}
