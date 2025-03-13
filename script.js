@@ -4,6 +4,17 @@ const submitButton = document.getElementById("size-form")
 const gridSize = document.getElementById("grid-size")
 const resetButton = document.getElementById("reset-button")
 
+const random = document.getElementById("random")
+const red = document.getElementById("red")
+const green = document.getElementById("green")
+const blue = document.getElementById("blue")
+
+const setRandomColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 
 const reset = () => {
     const box = document.querySelectorAll('.box');
@@ -31,12 +42,7 @@ submitButton.addEventListener("submit", (e) => {
 })
 
 
-const randomColor = () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgb(${r}, ${g}, ${b})`;
-}
+
 
 const makeGrid = (size) => {
     for (let i = 0; i < size * size; i++) {
@@ -46,7 +52,7 @@ const makeGrid = (size) => {
         boxDiv.style.height = `calc(100% / ${size})`;
 
         boxDiv.addEventListener('mouseover', () => {
-            boxDiv.style.backgroundColor = randomColor();
+            boxDiv.style.backgroundColor = setRandomColor();
         });
         board.appendChild(boxDiv)
     }
